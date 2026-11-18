@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234834">
   <meta name="description" content="Darpana Yoga in Schofields — beginner yoga, kids yoga, meditation and online or in-studio classes with Nayana Revanna. View class times and fees.">
   <title>Darpana Yoga | Reflect. Reconnect. Be.</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/darpana-favicon.png">
   <style>
     :root { --ink:#1d352a; --forest:#244c37; --green:#406c4c; --sage:#e4eadc; --cream:#f8f5ec; --ivory:#fffdf8; --muted:#5b6a5f; --line:#dce3d7; --gold:#b69d65; --shadow:0 22px 60px rgba(23,58,40,.08); }
     *,*::before,*::after {box-sizing:border-box}
@@ -18,7 +18,8 @@
     .nav{min-height:80px;display:flex;justify-content:space-between;align-items:center;gap:24px}
     .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:Georgia,'Times New Roman',serif;font-size:25px;letter-spacing:-.04em;white-space:nowrap;color:var(--ink)}
     .brand small{display:block;font:500 10px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.4em;color:var(--muted);margin-top:-4px}
-    .brand-icon{width:44px;height:44px;border:1.5px solid var(--forest);border-radius:50%;display:grid;place-items:center;color:var(--forest)}
+    .brand-icon{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto}
+    .brand-icon img{display:block;width:100%;height:100%;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:28px}
     .nav-links>a:not(.button){font-weight:600;font-size:14px;text-decoration:none;color:#344e3d}.nav-links>a:not(.button):hover{color:#779666}
     .button{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;background:var(--forest);color:white;text-decoration:none;font-size:14px;font-weight:700;border:1px solid var(--forest);transition:transform .15s ease,background .15s ease}
@@ -36,11 +37,8 @@
     .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:27px}
     .hero-bottom{display:flex;flex-wrap:wrap;gap:25px;margin-top:34px;color:#55735d;font-size:13px;font-weight:650}
     .hero-bottom span:before{content:"✓";margin-right:7px;font-weight:900}
-    .hero-art{position:relative;max-width:480px;width:100%;margin:auto;padding:35px;aspect-ratio:1/1;background:radial-gradient(circle at 50% 50%,#e2e8d7 0,#eceddf 52%,transparent 53%)}
-    .art-ring{width:100%;height:100%;border:1.4px solid #aebda6;border-radius:50%;display:grid;place-items:center;position:relative}
-    .art-ring:after{content:"";position:absolute;width:72%;height:72%;border:1px solid rgba(125,152,118,.5);border-radius:50%}
-    .art-svg{position:relative;width:74%;z-index:1}
-    .art-caption{position:absolute;right:9px;bottom:45px;background:rgba(255,253,248,.96);border:1px solid #e7e7da;border-radius:12px;padding:13px 18px;box-shadow:var(--shadow);font-size:13px;color:#5f7666;letter-spacing:.06em}
+    .hero-art{position:relative;max-width:480px;width:100%;margin:auto;padding:24px;aspect-ratio:1/1;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at center,#e4e8d9 0,rgba(232,235,220,.58) 56%,transparent 72%)}
+    .hero-logo{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(25,52,35,.035))}
     section{padding:85px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 38px}
     .section-head h2{font-size:clamp(36px,4vw,48px);letter-spacing:-.04em;margin:9px 0 12px}
     .section-head p{color:var(--muted);margin-bottom:0}
@@ -68,6 +66,20 @@
     .note-card{margin-top:28px;background:#e8ede2;border:1px solid #d9e1d5;border-radius:18px;padding:24px 30px;display:flex;align-items:flex-start;gap:22px}
     .note-card .flower{font-size:31px;color:#597f5b}
     .note-card h3{font-size:23px;margin-bottom:4px}.note-card p{color:#56675a;font-size:14px;margin:0}
+    .gallery{background:#f6f8f2}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .gallery-photo{appearance:none;display:block;padding:0;border:0;border-radius:17px;background:#e4eadc;overflow:hidden;cursor:zoom-in;box-shadow:0 6px 22px rgba(36,76,55,.07);aspect-ratio:4/3}
+    .gallery-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+    .gallery-photo:hover img{transform:scale(1.035)}
+    .gallery-state{padding:43px 26px;text-align:center;border:1px dashed #aebfa9;background:#eff3e9;border-radius:18px;color:#516952}
+    .gallery-state strong{display:block;font:400 28px/1.3 Georgia,serif;color:var(--ink);margin-bottom:8px}
+    .gallery-state p{margin:0}
+    .gallery-lightbox{width:min(1000px,calc(100% - 28px));max-height:calc(100% - 28px);padding:18px;border:none;border-radius:18px;background:var(--ivory);color:var(--ink);box-shadow:0 30px 70px rgba(0,0,0,.25)}
+    .gallery-lightbox::backdrop{background:rgba(12,31,21,.84)}
+    .gallery-lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 125px);height:auto;width:auto;margin:auto;object-fit:contain;border-radius:9px}
+    .lightbox-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;font-size:14px;color:var(--muted)}
+    .lightbox-close{border:1px solid var(--line);background:#e9eee3;border-radius:50%;font-size:22px;width:38px;height:38px;cursor:pointer;color:var(--ink)}
+    .lightbox-close:hover{background:#dbe5d6}
     .contact{background:var(--forest);color:#f8f5ed;position:relative;overflow:hidden}
     .contact:before{content:"";position:absolute;right:-120px;top:-125px;width:380px;height:380px;border:1px solid rgba(255,255,255,.13);border-radius:50%}
     .contact .section-head p{color:#d4e0d1}.contact .eyebrow{color:#bdd1b1}
@@ -85,10 +97,10 @@
     footer{background:#193627;color:#bbd0bf;padding:26px 0;font-size:12px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
     .footer-inner a{color:#dfebe0}
-    @media(max-width:880px){.nav-links{gap:15px}.nav-links>a:not(.button){display:none}.hero-grid{grid-template-columns:1fr 1fr;gap:10px}.hero-art{padding:16px}.art-caption{bottom:0}.class-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:clamp(46px,6vw,68px)}}
-    @media(max-width:640px){.wrap{width:min(100% - 32px,1120px)}.nav{min-height:69px}.brand{font-size:22px}.brand-icon{width:38px;height:38px}.nav-links .button{padding:10px 13px;font-size:12px}.hero-grid{grid-template-columns:1fr;padding:54px 0 55px;gap:20px}.hero-art{max-width:310px;grid-row:2;padding:24px}.art-caption{bottom:2px;right:-8px}.hero-sub{font-size:16px}h1{font-size:clamp(46px,12vw,64px)}section{padding:62px 0}.class-grid{grid-template-columns:1fr 1fr;gap:10px}.class-card{padding:21px 16px}.class-card h3{font-size:20px}.class-ico{height:42px;width:42px;margin-bottom:15px}.schedule{overflow-x:auto}.schedule table{min-width:610px}.schedule th,.schedule td{padding:15px 16px}.fees-grid{grid-template-columns:1fr 1fr;gap:10px}.fee{padding:21px 17px}.fee .price{font-size:35px}.fee.featured{grid-column:span 2}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:24px}.quote-card blockquote{font-size:32px}.note-card{padding:21px;gap:12px}.note-card .flower{font-size:23px}}
-    @media(max-width:370px){.class-grid,.fees-grid{grid-template-columns:1fr}.fee.featured{grid-column:span 1}.nav-links .button{font-size:11px;padding:8px 10px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+    @media(max-width:880px){.nav-links{gap:14px}.hero-grid{grid-template-columns:1fr 1fr;gap:10px}.hero-art{padding:16px}.class-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:clamp(46px,6vw,68px)}}
+    @media(max-width:640px){.wrap{width:min(100% - 32px,1120px)}.nav{min-height:69px;flex-direction:column;gap:8px;padding:10px 0 12px}.brand{font-size:22px;align-self:center}.brand-icon{width:38px;height:38px}.nav-links{width:100%;justify-content:space-between;gap:12px;overflow-x:auto}.nav-links>a:not(.button){font-size:12px;white-space:nowrap}.nav-links .button{display:none}.hero-grid{grid-template-columns:1fr;padding:54px 0 55px;gap:20px}.hero-art{max-width:310px;grid-row:2;padding:13px}.hero-sub{font-size:16px}h1{font-size:clamp(46px,12vw,64px)}section{padding:62px 0}.class-grid{grid-template-columns:1fr 1fr;gap:10px}.class-card{padding:21px 16px}.class-card h3{font-size:20px}.class-ico{height:42px;width:42px;margin-bottom:15px}.schedule{overflow-x:auto}.schedule table{min-width:610px}.schedule th,.schedule td{padding:15px 16px}.fees-grid{grid-template-columns:1fr 1fr;gap:10px}.fee{padding:21px 17px}.fee .price{font-size:35px}.fee.featured{grid-column:span 2}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:24px}.quote-card blockquote{font-size:32px}.note-card{padding:21px;gap:12px}.note-card .flower{font-size:23px}}
+    @media(max-width:370px){.class-grid,.fees-grid{grid-template-columns:1fr}.fee.featured{grid-column:span 1}.nav-links{gap:11px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.gallery-photo img{transition:none}}
   </style>
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"LocalBusiness","name":"Darpana Yoga","description":"Online and in-studio yoga classes in Schofields with instructor Nayana Revanna.","telephone":"+61422284121","email":"darpana.yoga26@gmail.com","address":{"@type":"PostalAddress","streetAddress":"54 Shuttle Parade","addressLocality":"Schofields","addressRegion":"NSW","addressCountry":"AU"}}
@@ -98,13 +110,11 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="Darpana Yoga home">
-        <span class="brand-icon" aria-hidden="true">
-          <svg width="29" height="29" viewBox="0 0 32 32" fill="none"><path d="M16 27V14m0 7c-7 0-10-5-10-9 6 0 10 4 10 9Zm0-7c0-5 4-9 10-9 0 4-3 9-10 9Zm0 12c0-6 5-9 11-9-1 6-4 9-11 9Z" fill="#537e5f"/><path d="M16 27c0-6-4-9-10-9 0 5 4 9 10 9" fill="#87a486"/></svg>
-        </span>
+        <span class="brand-icon" aria-hidden="true"><img src="assets/darpana-logo.webp" alt="" width="48" height="38"></span>
         <span>Darpana <small>Yoga</small></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#classes">Classes</a><a href="#timetable">Timetable</a><a href="#fees">Fees</a><a href="#contact">Contact</a>
+        <a href="#classes">Classes</a><a href="#timetable">Timetable</a><a href="#fees">Fees</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
         <a class="button" href="mailto:darpana.yoga26@gmail.com?subject=Darpana%20Yoga%20Class%20Enquiry">Enquire now ↗</a>
       </nav>
     </div>
@@ -119,22 +129,8 @@
           <div class="hero-actions"><a class="button" href="#timetable">Explore classes <span aria-hidden="true">→</span></a><a class="button outline" href="#contact">Get in touch</a></div>
           <div class="hero-bottom"><span>In-studio & online</span><span>Beginner-friendly classes</span></div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-ring">
-            <svg class="art-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <circle cx="160" cy="160" r="124" stroke="#8cab89" stroke-width="1.5"/>
-              <circle cx="160" cy="105" r="19" fill="#2b523b"/>
-              <path d="M145 127c7-6 23-6 30 0l13 75h-56l13-75Z" fill="#2b523b"/>
-              <path d="M140 139c-14 30-26 41-48 45m89-45c14 30 26 41 48 45" stroke="#2b523b" stroke-width="13" stroke-linecap="round"/>
-              <path d="M92 184c-11 7-17 5-20-2m157 2c10 7 16 5 19-2" stroke="#2b523b" stroke-width="5" stroke-linecap="round"/>
-              <path d="M144 199c-33-4-47 26-79 29-18 2-15 14 6 15 41 3 59-3 89-15 30 12 48 18 89 15 21-1 24-13 6-15-32-3-46-33-79-29" fill="#2b523b"/>
-              <path d="M63 255c54 23 140 25 194 0" stroke="#8cab89" stroke-width="2" stroke-linecap="round"/>
-              <path d="M74 266c48 16 124 18 174 0" stroke="#9db59a" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M48 206c-13-30-16-53-8-85m-1 63c-26-9-37-27-32-39 15 3 25 17 32 39Zm-3-28c-14-24-12-39-2-49 11 13 9 31 2 49Zm2-27c2-25 15-37 28-40-1 19-11 32-28 40Zm10-43c-2-18 6-31 19-38 3 17-5 30-19 38Z" stroke="#547957" stroke-width="2.6" fill="#749571" stroke-linejoin="round"/>
-              <path d="M50 218c-11-9-19-21-25-34" stroke="#547957" stroke-width="3"/>
-            </svg>
-          </div>
-          <div class="art-caption">Find your moment of calm</div>
+        <div class="hero-art">
+          <img class="hero-logo" src="assets/darpana-logo.webp" width="681" height="534" alt="Original Darpana Yoga logo: a person meditating inside a circle with leaves and a reflection">
         </div>
       </div>
     </section>
@@ -173,6 +169,17 @@
       </div>
       <div class="note-card"><div class="flower" aria-hidden="true">❧</div><div><h3>Your input matters</h3><p>Have a preferred class time, or would you like to see additional classes on the timetable? Let us know. We'd love to hear what works best for our community.</p></div></div>
     </div></section>
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A glimpse into our community</div><h2 id="gallery-title">Gallery</h2><p>Moments from our yoga practice and studio.</p></div>
+        <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+        <div id="gallery-state" class="gallery-state" role="status"><strong>Our gallery is coming soon</strong><p>Photos will appear here as we add them.</p></div>
+      </div>
+    </section>
+    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Gallery image viewer">
+      <div class="lightbox-top"><span id="gallery-lightbox-caption"></span><button class="lightbox-close" id="gallery-close" type="button" aria-label="Close photo">×</button></div>
+      <img id="gallery-lightbox-image" alt="">
+    </dialog>
     <section class="contact" id="contact"><div class="wrap"><div class="section-head"><div class="eyebrow">We'd love to hear from you</div><h2>Start your yoga journey</h2><p>Contact Nayana for class availability, fees or studio information.</p></div>
       <div class="contact-grid"><div class="contact-panel"><h3>Visit or reach out</h3>
         <p class="contact-item"><strong>Studio address</strong>54 Shuttle Parade, Schofields NSW, Australia</p>
@@ -184,5 +191,81 @@
     </div></section>
   </main>
   <footer><div class="wrap footer-inner"><span>© Darpana Yoga · Schofields, NSW</span><span>Made for movement, mindfulness and community. <a href="assets/class-flyer.webp" target="_blank" rel="noopener noreferrer">View class flyer</a></span></div></footer>
+  <script>
+    /* This public gallery reads file names from the studio's GitHub repository.
+       Owners add photos in assets/gallery using GitHub's "Upload files" option.
+       No public website uploads and no API keys are used. */
+    (() => {
+      const folderApi = 'https://api.github.com/repos/NandishNM/Yoga/contents/assets/gallery?ref=main';
+      const grid = document.getElementById('gallery-grid');
+      const state = document.getElementById('gallery-state');
+      const section = document.getElementById('gallery');
+      const viewer = document.getElementById('gallery-lightbox');
+      const viewerImage = document.getElementById('gallery-lightbox-image');
+      const viewerCaption = document.getElementById('gallery-lightbox-caption');
+      let started = false;
+      const extensions = /\.(?:jpe?g|png|webp|gif|avif)$/i;
+      const prettyName = (filename) => filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim() || 'Darpana Yoga photo';
+
+      async function loadGallery() {
+        if (started) return;
+        started = true;
+        state.querySelector('strong').textContent = 'Loading photos…';
+        state.querySelector('p').textContent = '';
+        try {
+          const response = await fetch(folderApi, { headers: { 'Accept': 'application/vnd.github+json' }});
+          if (!response.ok) throw new Error('Gallery listing unavailable: ' + response.status);
+          const result = await response.json();
+          if (!Array.isArray(result)) throw new Error('Gallery response was not a folder.');
+          const photos = result.filter(file => file.type === 'file' && extensions.test(file.name)).sort((a,b) => a.name.localeCompare(b.name));
+          if (!photos.length) {
+            state.querySelector('strong').textContent = 'Our gallery is coming soon';
+            state.querySelector('p').textContent = 'Photos will appear here as we add them.';
+            return;
+          }
+          const fragment = document.createDocumentFragment();
+          photos.forEach((photo, index) => {
+            const label = prettyName(photo.name);
+            const path = 'assets/gallery/' + encodeURIComponent(photo.name);
+            const item = document.createElement('button');
+            item.className = 'gallery-photo';
+            item.type = 'button';
+            item.setAttribute('aria-label', 'View photo: ' + label);
+            const img = document.createElement('img');
+            img.src = path;
+            img.alt = label;
+            img.loading = index < 3 ? 'eager' : 'lazy';
+            img.decoding = 'async';
+            img.onerror = () => { item.remove(); };
+            item.appendChild(img);
+            item.addEventListener('click', () => {
+              viewerImage.src = path;
+              viewerImage.alt = label;
+              viewerCaption.textContent = label;
+              if (typeof viewer.showModal === 'function') viewer.showModal();
+            });
+            fragment.appendChild(item);
+          });
+          grid.appendChild(fragment);
+          state.hidden = true;
+        } catch (error) {
+          state.querySelector('strong').textContent = 'Gallery temporarily unavailable';
+          state.querySelector('p').textContent = 'Please try again in a little while.';
+          console.warn('Unable to load the gallery:', error);
+        }
+      }
+
+      document.getElementById('gallery-close').addEventListener('click', () => viewer.close());
+      viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+      document.querySelectorAll('a[href="#gallery"]').forEach(link => link.addEventListener('click', loadGallery));
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (entries.some(entry => entry.isIntersecting)) { loadGallery(); observer.disconnect(); }
+        }, { rootMargin: '350px' });
+        observer.observe(section);
+      } else { loadGallery(); }
+      if (window.location.hash === '#gallery') loadGallery();
+    })();
+  </script>
 </body>
 </html>
